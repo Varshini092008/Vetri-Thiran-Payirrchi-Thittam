@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card">
+    <h1>🤖 Welcome to PocketSmart AI</h1>
+
+    <p>
+        Your AI-powered personal planning assistant.
+    </p>
+
+    {% if user %}
+
+        <p>Welcome back!</p>
+
+        <a href="/dashboard">
+            <button type="button">Go to Dashboard</button>
+        </a>
+
+    {% else %}
+
+        <a href="/login">
+            <button type="button">Login</button>
+        </a>
+
+        <a href="/register">
+            <button type="button">Create Account</button>
+        </a>
+
+    {% endif %}
+</div>
+
+<div class="card">
+
+    <h2>What can PocketSmart AI do?</h2>
+
+    <ul>
+        <li>🏠 Home Planning</li>
+        <li>🎉 Party Planning</li>
+        <li>💎 Jewelry Planning</li>
+        <li>💰 Budget-based Recommendations</li>
+    </ul>
+
+</div>
+
+{% endblock %}

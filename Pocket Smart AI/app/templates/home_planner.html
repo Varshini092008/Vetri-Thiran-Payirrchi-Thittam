@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card">
+    <h1>🏠 Home Planner</h1>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    <form action="/generate-home" method="post">
+
+        <label>Budget</label>
+        <input
+            type="number"
+            name="budget"
+            placeholder="Enter your budget"
+            required
+        >
+
+        <label>Rooms</label>
+
+        <label>
+            <input type="checkbox" name="rooms" value="Bedroom">
+            Bedroom
+        </label>
+
+        <label>
+            <input type="checkbox" name="rooms" value="Living Room">
+            Living Room
+        </label>
+
+        <label>
+            <input type="checkbox" name="rooms" value="Kitchen">
+            Kitchen
+        </label>
+
+        <label>
+            <input type="checkbox" name="rooms" value="Bathroom">
+            Bathroom
+        </label>
+
+        <label>Style</label>
+        <select name="style">
+            <option value="Modern">Modern</option>
+            <option value="Traditional">Traditional</option>
+            <option value="Minimal">Minimal</option>
+            <option value="Luxury">Luxury</option>
+        </select>
+
+        <label>Priorities</label>
+        <textarea
+            name="priorities"
+            placeholder="Example: Low cost, storage, simple design"
+        ></textarea>
+
+        <button type="submit">
+            Generate Plan
+        </button>
+
+    </form>
+</div>
+
+{% endblock %}

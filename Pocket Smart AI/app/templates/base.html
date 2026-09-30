@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PocketSmart AI</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #222;
+        }
+
+        nav {
+            background: #222;
+            padding: 15px 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        button {
+            padding: 10px 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="/">PocketSmart AI</a>
+        <a href="/home-planner">Home Planner</a>
+        <a href="/party-planner">Party Planner</a>
+        <a href="/jewelry-planner">Jewelry Planner</a>
+    </nav>
+
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card">
+    <h1>💎 Jewelry Planner</h1>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    <form action="/generate-jewelry" method="post" enctype="multipart/form-data">
+
+        <label>Budget</label>
+        <input
+            type="number"
+            name="budget"
+            placeholder="Enter your budget"
+            required
+        >
+
+        <label>Occasion</label>
+        <select name="occasion">
+            <option value="Wedding">Wedding</option>
+            <option value="Engagement">Engagement</option>
+            <option value="Party">Party</option>
+            <option value="Festival">Festival</option>
+            <option value="Daily Wear">Daily Wear</option>
+        </select>
+
+        <label>Style</label>
+        <select name="style">
+            <option value="Traditional">Traditional</option>
+            <option value="Modern">Modern</option>
+            <option value="Minimal">Minimal</option>
+            <option value="Elegant">Elegant</option>
+        </select>
+
+        <label>Upload Outfit Image</label>
+        <input
+            type="file"
+            name="outfit_image"
+            accept="image/jpeg,image/png,image/webp"
+        >
+
+        <button type="submit">
+            Generate Jewelry Plan
+        </button>
+
+    </form>
+</div>
+
+{% endblock %}

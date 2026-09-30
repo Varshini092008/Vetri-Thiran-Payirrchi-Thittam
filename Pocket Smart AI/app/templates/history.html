@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card">
+
+    <h1>📜 Recommendation History</h1>
+
+    {% if records %}
+
+        {% for record in records %}
+
+            <div class="card">
+
+                <h3>{{ record.type | title }} Planner</h3>
+
+                <p>
+                    Recommendation ID: {{ record.id }}
+                </p>
+
+                <a href="/recommendation/{{ record.id }}">
+                    <button type="button">
+                        View Recommendation
+                    </button>
+                </a>
+
+            </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p>
+            No recommendations found yet.
+        </p>
+
+        <p>
+            Create your first plan using one of the planners.
+        </p>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

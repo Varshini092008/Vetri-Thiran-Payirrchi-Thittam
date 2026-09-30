@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card">
+
+    <h1>✨ Your Recommendation</h1>
+
+    {% if recommendation %}
+
+        <h2>{{ recommendation.data.title }}</h2>
+
+        <h3>Planner Type</h3>
+        <p>{{ recommendation.type | title }}</p>
+
+        <h3>Plan Details</h3>
+
+        <p>
+            <strong>Budget:</strong>
+            ₹{{ recommendation.data.budget }}
+        </p>
+
+        {% if recommendation.data.rooms %}
+            <p>
+                <strong>Rooms:</strong>
+                {{ recommendation.data.rooms | join(", ") }}
+            </p>
+        {% endif %}
+
+        {% if recommendation.data.style %}
+            <p>
+                <strong>Style:</strong>
+                {{ recommendation.data.style }}
+            </p>
+        {% endif %}
+
+        {% if recommendation.data.guests %}
+            <p>
+                <strong>Guests:</strong>
+                {{ recommendation.data.guests }}
+            </p>
+        {% endif %}
+
+        {% if recommendation.data.event_type %}
+            <p>
+                <strong>Event:</strong>
+                {{ recommendation.data.event_type }}
+            </p>
+        {% endif %}
+
+        {% if recommendation.data.venue %}
+            <p>
+                <strong>Venue:</strong>
+                {{ recommendation.data.venue }}
+            </p>
+        {% endif %}
+
+        {% if recommendation.data.occasion %}
+            <p>
+                <strong>Occasion:</strong>
+                {{ recommendation.data.occasion }}
+            </p>
+        {% endif %}
+
+        {% if recommendation.data.budget_breakdown %}
+
+<h3>💰 Budget Breakdown</h3>
+
+<ul>
+    {% for item, amount in recommendation.data.budget_breakdown.items() %}
+        <li>
+            <strong>{{ item }}:</strong>
+            ₹{{ "{:,.0f}".format(amount) }}
+        </li>
+    {% endfor %}
+</ul>
+
+{% endif %}
+        <h3>💡 Suggestions</h3>
+
+        <ul>
+            {% for suggestion in recommendation.data.suggestions %}
+                <li>{{ suggestion }}</li>
+            {% endfor %}
+        </ul>
+
+    {% else %}
+
+        <p>No recommendation found.</p>
+
+    {% endif %}
+
+    <br>
+
+    <a href="/dashboard">
+        <button type="button">Back to Dashboard</button>
+    </a>
+
+</div>
+
+{% endblock %}

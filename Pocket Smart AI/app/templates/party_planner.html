@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card">
+    <h1>🎉 Party Planner</h1>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    <form action="/generate-party" method="post">
+
+        <label>Budget</label>
+        <input
+            type="number"
+            name="budget"
+            placeholder="Enter your budget"
+            required
+        >
+
+        <label>Number of Guests</label>
+        <input
+            type="number"
+            name="guests"
+            placeholder="Enter number of guests"
+            required
+        >
+
+        <label>Event Type</label>
+        <select name="event_type">
+            <option value="Birthday">Birthday</option>
+            <option value="Wedding">Wedding</option>
+            <option value="Engagement">Engagement</option>
+            <option value="Anniversary">Anniversary</option>
+            <option value="College Event">College Event</option>
+        </select>
+
+        <label>Venue</label>
+        <select name="venue">
+            <option value="Home">Home</option>
+            <option value="Hall">Hall</option>
+            <option value="Outdoor">Outdoor</option>
+        </select>
+
+        <label>Preferences</label>
+        <textarea
+            name="preferences"
+            placeholder="Example: Decoration, food, music, photography"
+        ></textarea>
+
+        <button type="submit">
+            Generate Party Plan
+        </button>
+
+    </form>
+</div>
+
+{% endblock %}

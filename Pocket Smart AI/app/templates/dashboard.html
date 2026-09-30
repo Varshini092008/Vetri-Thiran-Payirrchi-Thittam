@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card">
+    <h1>📊 PocketSmart AI Dashboard</h1>
+
+    <p>Choose a planner to get your personalized recommendation.</p>
+</div>
+
+<div class="card">
+    <h2>🏠 Home Planner</h2>
+    <p>Plan your home based on your budget, rooms and style.</p>
+
+    <a href="/home-planner">
+        <button type="button">Open Home Planner</button>
+    </a>
+</div>
+
+<div class="card">
+    <h2>🎉 Party Planner</h2>
+    <p>Plan your party based on your budget and number of guests.</p>
+
+    <a href="/party-planner">
+        <button type="button">Open Party Planner</button>
+    </a>
+</div>
+
+<div class="card">
+    <h2>💎 Jewelry Planner</h2>
+    <p>Get jewelry recommendations based on your budget and occasion.</p>
+
+    <a href="/jewelry-planner">
+        <button type="button">Open Jewelry Planner</button>
+    </a>
+</div>
+
+<div class="card">
+    <h2>📜 Recommendation History</h2>
+    <p>View your previous recommendations.</p>
+
+    <a href="/history">
+        <button type="button">View History</button>
+    </a>
+</div>
+
+{% endblock %}
